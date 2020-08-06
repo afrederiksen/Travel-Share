@@ -1,0 +1,50 @@
+<h3>Add Trip</h3>
+<div class="row">
+    <form action="/trips" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="title" name="title">
+                <label for="title">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="coordinates.lat" name="coordinates.lat">
+                <label for="coordinates.lat">Latitude</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field">
+                <input type="text" id="coordinates.long" name="coordinates.long">
+                <label for="coordinates.long">Longitude</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="long" name="yearsTraveled" value="{{trip.yearsTraveled}}">
+                <label for="long">Year Traveled</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    <option value="public" selected>Public</option>
+                    <option value="private">Private</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Tell us about your trip!</h5>
+                <textarea id="body" name="body"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

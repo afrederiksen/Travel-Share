@@ -1,0 +1,38 @@
+<h1>Dashboard</h1>
+<h3>Welcome {{name}}</h3>
+{{#if trips}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Coordinates</th>
+                <th>Visited</th>
+                <th>Date added</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each trips}}
+                <tr>
+                    <td><a href="/trips/{{_id}}">{{title}}</a></td>
+                    <td><a href="https://www.google.com/maps/@{{coordinates.lat}},{{coordinates.long}},15z">{{coordinates.lat}},{{coordinates.long}}</a></td>
+                    <td>{{yearsTraveled}}</td>
+                    <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                    <td><span class="dash-status">{{status}}</span></td>
+                    <td>
+                        <a href="/trips/edit/{{_id}}" class="btn btn-float">
+                        <i class="fas fa-edit"></i></a>
+
+                        <form action="/trips/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red"><i class="fas fa-trash"></i></button>
+                        </form>
+                        <td>
+                </tr>
+                {{/each}}
+        </tbody>
+    </table>
+{{else}}
+<p>You haven't logged any trips</p>
+{{/if}}
