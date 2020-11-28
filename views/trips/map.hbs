@@ -1,27 +1,13 @@
+<!doctype html>
+<html lang="en">
 
-    <link href="https://assets.apf.cloud/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-
-
+    <meta name="theme-color" content="#563d7c">
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
 
         body {
-            padding-top: 3.5rem;
             overflow-y: scroll;
             scrollbar-width: none;
             /* Firefox */
@@ -91,9 +77,7 @@
 <body>
     <main role="main">
         <center>
-            <div class="starter-template">
                 <div id="map"></div>
-            </div>
         </center>
 
     </main><!-- /.container -->
@@ -112,8 +96,158 @@
             zoom: 5
         });
         //Mutliyear
-        console.log({{trip.coordinates.long}});
-       L.marker([{{trip.coordinates.long}}, {{trip.coordinates.lat}}]).addTo(map).bindPopup("<b>{{trip.title}}</b><br>{{trip.yearsTraveled}}");
+        var copenhagen = L.marker([55.675758361816406, 12.569023132324219]).addTo(map);
+        copenhagen.bindPopup("<b>Copenhagen, Denmark</b><br>2008-2020");
+        var herlev = L.marker([55.72333908081055, 12.440375328063965]).addTo(map);
+        herlev.bindPopup("<b>Herlev, Denmark</b><br>2012-2020"); //check
+        var killington = L.marker([43.677568, -72.779825]).addTo(map);
+        killington.bindPopup("<b>Killington, Vermont</b><br>2008-2020");
+        var fernie = L.marker([49.5041747, -115.062867]).addTo(map);
+        fernie.bindPopup("<b>Fernie, BC</b><br>2012 [add more]");
+        var smugglersNotch = L.marker([44.588460, -72.789994]).addTo(map);
+        smugglersNotch.bindPopup("<b>Smugglers' Notch Resort, Jeffersonville, VT</b><br>2014-2018");
+        var hornbæk = L.marker([56.088779, 12.451010]).addTo(map);
+        hornbæk.bindPopup("<b>Hornbæk, Denmark</b><br>2012, 2013");
+        var charleston = L.marker([32.776475, -79.931051]).addTo(map);
+        charleston.bindPopup("<b>Charleston, South Carolina</b><br>2011, 2018");
+        //TAG
+        var washingtonDC = L.marker([38.907192, -77.036871]).addTo(map);
+        washingtonDC.bindPopup("<b>Washington, DC</b><br>2011, 2018");
+        var newYork = L.marker([40.712784, -74.005941]).addTo(map);
+        newYork.bindPopup("<b>New York, New York</b><br>2000-2020");
+        var richmond = L.marker([37.540725, -77.436048]).addTo(map);
+        richmond.bindPopup("<b>Richmond, Virginia</b><br>2018");
+        var charlotte = L.marker([35.227087, -80.843127]).addTo(map);
+        charlotte.bindPopup("<b>Charlotte, North Carolina</b><br>2018-2020");
+        var savannah = L.marker([32.080899, -81.091203]).addTo(map);
+        savannah.bindPopup("<b>Savannah, Georgia</b><br>2011, 2018");
+        var raleigh = L.marker([35.779590, -78.638179]).addTo(map);
+        raleigh.bindPopup("<b>Raleigh, North Carolina</b><br>2018");
+        var alexandria = L.marker([38.804836, -77.046921]).addTo(map);
+        alexandria.bindPopup("<b>Alexandria, Virginia</b><br>2018");
+        var usc = L.marker([33.993758, -81.029919]).addTo(map);
+        usc.bindPopup("<b>University of South Carolina, Columbia, South Carolina</b><br>2018-2019");
+        var rome = L.marker([41.8892936706543, 12.493546485900879]).addTo(map);
+        rome.bindPopup("<b>Rome, Italy</b><br>2010, 2016");
+        var capri = L.marker([40.54905319213867, 14.227278709411621]).addTo(map);
+        capri.bindPopup("<b>Capri, Italy</b><br>2010,2016")
+        //2020
+        var aalborg = L.marker([57.048820, 9.921747]).addTo(map);
+        aalborg.bindPopup("<b>Aalborg, Denmark</b><br>2020");
+        var amsterdam = L.marker([52.366697, 4.894540]).addTo(map);
+        amsterdam.bindPopup("<b>Amsterdam, Netherlands</b><br>2020");
+        var vienna = L.marker([48.208174, 16.373819]).addTo(map);
+        vienna.bindPopup("<b>Vienna, Austria</b><br>2020");
+        var rigaAiport = L.marker([56.922655, 23.973313]).addTo(map);
+        rigaAiport.bindPopup("<b>Riga, Latvia (airport)</b><br>2020");
+        var talinn = L.marker([59.436961, 24.753575]).addTo(map);
+        talinn.bindPopup("<b>Talinn, Estonia</b><br>2020");
+        var prague = L.marker([50.075538, 14.437800]).addTo(map);
+        prague.bindPopup("<b>Prague, Czech Republic</b><br>2020");
+        var malmö = L.marker([55.604981, 13.003822]).addTo(map);
+        malmö.bindPopup("<b>Malmö, Sweden</b><br>2020");
+        var lund = L.marker([55.704660, 13.191007]).addTo(map);
+        lund.bindPopup("<b>Lund, Sweden</b><br>2020");
+        //2019
+        var ithaca = L.marker([42.419919, -76.493340]).addTo(map);
+        ithaca.bindPopup("<b>Ithaca, New York</b><br>2019");
+        var lisbon = L.marker([38.722252, -9.139337, ]).addTo(map);
+        lisbon.bindPopup("<b>Lisbon, Portugal</b><br>2019");
+        //2018
+        var uMaryland = L.marker([38.986918, -76.942554]).addTo(map);
+        uMaryland.bindPopup("<b>University of Maryland, College Park, Maryland</b><br>2018");
+        var curaçao = L.marker([12.169570, -68.990020]).addTo(map);
+        curaçao.bindPopup("<b>Curaçao</b><br>2018");
+        var iceland = L.marker([64.963051, -19.020835]).addTo(map);
+        iceland.bindPopup("<b>Iceland</b><br>2018");
+        //2017
+        var uDelaware = L.marker([39.677950, -75.750611]).addTo(map);
+        uDelaware.bindPopup("<b>University of Delaware</b><br>2018");
+        var burlington = L.marker([44.475882, -73.212072]).addTo(map);
+        burlington.bindPopup("<b>Burlington, Vermont</b><br>2018");
+        //2016
+        var florence = L.marker([43.7698712, 11.2555757]).addTo(map);
+        florence.bindPopup("<b>Florence, Italy</b><br>2016");
+        var siena = L.marker([43.31785202026367, 11.330717086791992]).addTo(map);
+        siena.bindPopup("<b>Siena, Italy</b><br>2016")
+        var sorrento = L.marker([40.626319885253906, 14.375738143920898]).addTo(map);
+        sorrento.bindPopup("<b>Sorrento, Italy</b><br>2016");
+
+        var pisa = L.marker([43.71628952026367, 10.402142524719238]).addTo(map);
+        pisa.bindPopup("<b>Pisa, Italy</b><br>2016")
+        //2015
+        var moscow = L.marker([55.755825, 37.617298]).addTo(map);
+        moscow.bindPopup("<b>Moscow, Russia</b><br>2015");
+        var uglich = L.marker([57.523930, 38.321903]).addTo(map);
+        uglich.bindPopup("<b>Uglich, Russia</b><br>2015");
+        var yaroslavl = L.marker([57.626074, 39.884471]).addTo(map);
+        yaroslavl.bindPopup("<b>Yaroslavl, Russia</b><br>2015");
+        var kuzino = L.marker([59.861661, 38.378675]).addTo(map);
+        kuzino.bindPopup("<b>Kuzino, Russia</b><br>2015");
+        var mandrogi = L.marker([60.898611, 33.819444]).addTo(map);
+        mandrogi.bindPopup("<b>Mandrogi, Russia</b><br>2015");
+        var kizhi = L.marker([62.083313, 35.214786]).addTo(map);
+        kizhi.bindPopup("<b>Kizhi, Russia</b><br>2015");
+        var saintPetersburg = L.marker([59.934280, 30.335099]).addTo(map);
+        saintPetersburg.bindPopup("<b>Saint Petersburg, Russia</b><br>2015");
+        var majorca = L.marker([39.569600, 2.650160]).addTo(map);
+        majorca.bindPopup("<b>Majorca, Spain</b><br>2015");
+        var westPalmBeach = L.marker([26.715342, -80.053375]).addTo(map);
+        westPalmBeach.bindPopup("<b>West Palm Beach, Florida</b><br>2015");
+        var miami = L.marker([25.761680, -80.191790]).addTo(map);
+        miami.bindPopup("<b>Miami, Florida</b><br>2015");
+        //2014
+        var funen = L.marker([57.209730, 9.552070]).addTo(map);
+        funen.bindPopup("<b>Funen, Denmark</b><br>2014");
+        var hamburg = L.marker([53.551086, 9.993682]).addTo(map);
+        hamburg.bindPopup("<b>Hamburg, Germany</b><br>2014");
+        var nice = L.marker([43.710175, 7.261953]).addTo(map);
+        nice.bindPopup("<b>Nice, France</b><br>2014");
+        var cannes = L.marker([43.550900, 7.010540]).addTo(map);
+        cannes.bindPopup("<b>Cannes, France</b><br>2014");
+        var monaco = L.marker([43.738419, 7.424616]).addTo(map);
+        monaco.bindPopup("<b>Monte Carlo, Monaco</b><br>2014");
+        var portofino = L.marker([44.303959, 9.207770]).addTo(map);
+        portofino.bindPopup("<b>Portofino, Italy</b><br>2014");
+        var chamonix = L.marker([45.925461, 6.869810]).addTo(map);
+        chamonix.bindPopup("<b>Chamonix, France</b><br>2014");
+        var genoa = L.marker([44.405650, 8.946256]).addTo(map);
+        genoa.bindPopup("<b>Genoa, Italy</b><br>2014");
+        //2013
+        var quebec = L.marker([46.813049, -71.225739]).addTo(map);
+        quebec.bindPopup("<b>Québec City, Canada</b><br>2013");
+        var paris = L.marker([48.856614, 2.352222]).addTo(map);
+        paris.bindPopup("<b>Paris, France</b><br>2013");
+        var london = L.marker([51.5073219, -0.1276474]).addTo(map);
+        london.bindPopup("<b>London, United Kingdom</b><br>2013, 2020");
+        var boston = L.marker([42.360081, -71.058884]).addTo(map);
+        boston.bindPopup("<b>Boston, Massachusetts</b><br>2013");
+        var osloairport = L.marker([59.913820, 10.738740]).addTo(map);
+        osloairport.bindPopup("<b>Oslo, Norway (airport)</b><br>2013");
+        //2012
+        var bilund = L.marker([55.728449, 9.112366]).addTo(map);
+        bilund.bindPopup("<b>Bilund, Denmark</b><br>2012, 2020");
+        //2011
+        var philadelphia = L.marker([39.952584, -75.165222]).addTo(map);
+        philadelphia.bindPopup("<b>Philadelphia, Pennsylvania</b><br>2011");
+        var washingtondc = L.marker([38.907192, -77.036871]).addTo(map);
+        washingtondc.bindPopup("<b>Washington D.C.</b><br>2011");
+        var atlanta = L.marker([33.748995, -84.387982]).addTo(map);
+        atlanta.bindPopup("<b>Atlanta, Georgia</b><br>2011");
+        var hiltonHeadIsland = L.marker([32.216316, -80.752608]).addTo(map);
+        hiltonHeadIsland.bindPopup("<b>Hilton Head Island, South Carolina</b><br>2011");
+        var strasburg = L.marker([39.983156, -76.184123]).addTo(map);
+        strasburg.bindPopup("<b>Strasburg, Pennsylvania<br>2011");
+        var stoneMountain = L.marker([33.808161, -84.170196]).addTo(map);
+        stoneMountain.bindPopup("<b>Stone Mountain, Georgia</b><br>2011");
+        //2010
+        var pompeii = L.marker([40.746157, 14.498934]).addTo(map);
+        pompeii.bindPopup("<b>Pompeii, Italy</b><br>2010");
+        var naples = L.marker([40.851798, 14.268120]).addTo(map);
+        naples.bindPopup("<b>Naples, Italy</b><br>2010");
+        //2009
+        var orlando = L.marker([28.538335, -81.379236]).addTo(map);
+        orlando.bindPopup("<b>Orlando, Florida</b><br>2009");
         // create fullscreen control
         var fsControl = L.control.fullscreen();
         // add fullscreen control to the map
@@ -134,4 +268,6 @@
             map.invalidateSize();
         }).trigger("resize");
     </script>
-    <script src="https://assets.apf.cloud/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -27,4 +27,22 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
   }
 })
 
+// @desc    User trips
+// @route   GET /trips/user/:userId
+router.get('/map', ensureAuth, async(req, res) => {
+  /*try{
+    const trips = await Trip.find({
+      user: req.params.userId,
+      status: 'public'
+    }).populate('user').lean()
+    res.render('trips/map',{
+      trips
+    })
+  }
+  catch(error){
+    console.error(err)
+    return res.render('error/500')
+  }*/
+  res.render('trips/map')
+})
 module.exports = router

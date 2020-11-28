@@ -40,7 +40,6 @@ router.get('/', ensureAuth, async (req, res) => {
     res.render('error/500')
   }
 })
-
 // @desc    Show single trip
 // @route   GET /trips/:id
 router.get('/:id', ensureAuth, async (req, res) => {
@@ -144,22 +143,6 @@ router.get('/user/:userId', ensureAuth, async(req, res) => {
     return res.render('error/500')
   }
 })
-// @desc    User trips
-// @route   GET /trips/user/:userId
-router.get('/map/:userId', ensureAuth, async(req, res) => {
-  try{
-    const trips = await Trip.find({
-      user: req.params.userId,
-      status: 'public'
-    }).populate('user').lean()
-    res.render('trips/map',{
-      trips
-    })
-  }
-  catch(error){
-    console.error(err)
-    return res.render('error/500')
-  }
-})
+
 
 module.exports = router
